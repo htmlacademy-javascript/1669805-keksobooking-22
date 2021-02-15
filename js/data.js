@@ -1,5 +1,5 @@
 
-import {SIMILAR_ADS_COUNT, getRandomFloat, getRandomInteger, addLeadingZero, getRandomItem, makeUniqueRandomIntegerGenerator} from './util.js';
+import {getRandomFloat, getRandomInteger, addLeadingZero, getRandomItem, makeUniqueRandomIntegerGenerator} from './util.js';
 // массивы значений /////////////
 const sloganTitles = [
   'Чище чем у остальных',
@@ -90,6 +90,6 @@ const getAd = () => {
 
 const getAds = (count) => new Array(count).fill(null).map(getAd);
 
-alert(JSON.stringify(getAds(SIMILAR_ADS_COUNT)));
+
 
 export {getAds};

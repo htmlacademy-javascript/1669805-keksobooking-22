@@ -1,4 +1,4 @@
-const SIMILAR_ADS_COUNT = 10;
+
 /* Функция, возвращающая случайное число с плавающей точкой из переданного диапазона включительно.
 Источник: https://learn.javascript.ru/number */
 const getRandomFloat = (min, max, precision = 2) => {
@@ -38,5 +38,5 @@ const makeUniqueRandomIntegerGenerator = (min, max) => {
   };
 };
 
-export {SIMILAR_ADS_COUNT, getRandomFloat, getRandomInteger, addLeadingZero, getRandomItem, makeUniqueRandomIntegerGenerator};
+export {getRandomFloat, getRandomInteger, addLeadingZero, getRandomItem, makeUniqueRandomIntegerGenerator};
 
