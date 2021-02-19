@@ -35,6 +35,7 @@ const featureTitles = [
   'elevator',
   'conditioner',
 ];
+
 const descriptionTitles = [
   'Убогая берлога',
   'Чисто, что негде плюнуть',
@@ -43,6 +44,7 @@ const descriptionTitles = [
   'Идеально для любовников',
   'Вчера здесь умерла бабушка',
 ];
+
 
 // создание объекта author ////////////
 const createAuthor = () => {
@@ -80,8 +82,9 @@ const getAd = () => {
     description: getRandomItem(descriptionTitles),
     photos: getPhotos(),
   };
+
   const ad = {
-    autor: createAuthor(),
+    author: createAuthor(),
     offer,
     location,
   };
