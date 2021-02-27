@@ -53,7 +53,7 @@ const createCustomPopup = (ad) => {
   cardElement.querySelector('.popup__avatar').src = author.avatar;
   fragment.appendChild(cardElement);
   return fragment;
-  // userMap.appendChild(fragment);
+
 }
 
 

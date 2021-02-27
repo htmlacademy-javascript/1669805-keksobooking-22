@@ -3,7 +3,7 @@ import { createCustomPopup } from './popup.js'
 //создание карты
 const createMap = (ads) => {
   /* global L:readonly */
-  const map = L.map('map')
+  const map = L.map('map-canvas')
 
     .on('load', () => {
 
@@ -79,7 +79,7 @@ const createMap = (ads) => {
     marker
       .addTo(map)
       .bindPopup(
-        createCustomPopup(point),
+        () => createCustomPopup(point),
         {
           keepInView: true,
         },

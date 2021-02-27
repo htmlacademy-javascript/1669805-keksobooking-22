@@ -6,19 +6,10 @@ createMap(ads);
 
 // работа с картой
 // скрываем элементы по дз
-const mapFiltersContaner = document.querySelector('.map__filters');
-mapFiltersContaner.classList.add('map__filters--disabled');
+const mapFilters = document.querySelector('.map__filters');
+mapFilters.classList.add('ad-form--disabled');
+mapFilters.querySelectorAll('select, input').forEach((it) => it.disabled = true);
 
-const mapFiltersElements = mapFiltersContaner.querySelectorAll('select, fieldset');
-mapFiltersElements.forEach((value) => {
-  value.classList.add('map__filters--disabled');
-});
-
-const adContainer = document.querySelector('.ad-form');
-adContainer.classList.add('ad-form--disabled');
-
-const adElements = adContainer.querySelectorAll('fieldset');
-adElements.forEach((value) => {
-  value.classList.add('ad-form--disabled');
-});
-
+const adForm = document.querySelector('.ad-form');
+adForm.classList.add('ad-form--disabled');
+adForm.querySelectorAll('fieldset').forEach((it) => it.disabled = true);
