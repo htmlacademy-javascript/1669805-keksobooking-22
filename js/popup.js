@@ -1,11 +1,7 @@
 import { declOfNum } from './util.js'
-const userMap = document.querySelector('#map-canvas');
-const cardList = document.querySelector('#card').content;
+const adCard = document.querySelector('#card').content;
 
-
-
-
-const openPopup = (ad) => {
+const createCustomPopup = (ad) => {
   const fragment = document.createDocumentFragment();
 
   const offer = ad.offer;
@@ -18,7 +14,7 @@ const openPopup = (ad) => {
     palace: 'Дворец',
   };
 
-  const cardElement = cardList.cloneNode(true);
+  const cardElement = adCard.cloneNode(true);
   cardElement.querySelector('.popup__title').textContent = offer.title;
   cardElement.querySelector('.popup__text--address').textContent = offer.address;
   cardElement.querySelector('.popup__text--price').textContent = `${offer.price} ₽/ночь`;
@@ -26,19 +22,21 @@ const openPopup = (ad) => {
   cardElement.querySelector('.popup__text--time').textContent = `Заезд после ${offer.checkin}, выезд до ${offer.checkout}`;
   cardElement.querySelector('.popup__description').textContent = offer.description;
   cardElement.querySelector('.popup__type').textContent = offerTypes[offer.type];
+
   // создание features
-  const futureContainer = cardElement.querySelector('.popup__features');
+  const featureContainer = cardElement.querySelector('.popup__features');
   if (offer.features.length > 0) {
-    futureContainer.innerHTML = '';
+    featureContainer.innerHTML = '';
     for (const feature of offer.features) {
       const li = document.createElement('li');
       li.classList.add('popup__feature');
       li.classList.add(`popup__feature--${feature}`);
-      futureContainer.appendChild(li);
+      featureContainer.appendChild(li);
     }
   } else {
-    futureContainer.hidden = true
+    featureContainer.hidden = true
   }
+
   // создание photo
   const photoContainer = cardElement.querySelector('.popup__photos');
   photoContainer.innerHTML = '';
@@ -54,9 +52,9 @@ const openPopup = (ad) => {
 
   cardElement.querySelector('.popup__avatar').src = author.avatar;
   fragment.appendChild(cardElement);
+  return fragment;
 
-  userMap.appendChild(fragment);
 }
 
 
-export { openPopup };
+export { createCustomPopup };
