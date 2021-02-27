@@ -1,5 +1,6 @@
 
 import {getRandomFloat, getRandomInteger, addLeadingZero, getRandomItem, makeUniqueRandomIntegerGenerator} from './util.js';
+
 // массивы значений /////////////
 const sloganTitles = [
   'Чище чем у остальных',
@@ -52,11 +53,13 @@ const createAuthor = () => {
     avatar: `img/avatars/user${addLeadingZero(getRandomInteger(1,8))}.png`,
   };
 };
+
 // создание массива features //////////
 const getFeatures = () => {
   const generator = makeUniqueRandomIntegerGenerator(0, featureTitles.length - 1);
   return new Array (getRandomInteger(0, featureTitles.length - 1)).fill('').map(() => featureTitles[generator()]);
 };
+
 // создание массива Photos
 const getPhotos = () => {
   const generator = makeUniqueRandomIntegerGenerator(1, 3);
