@@ -1,25 +1,25 @@
 const userForm = document.querySelector('.ad-form');
-const type = userForm.querySelector('#type');
-const price = userForm.querySelector('#price');
+const typeOfAccommodation = document.querySelector('#type');
+const priceInput = document.querySelector('#price');
 
+const minPrice = {
+  flat: 1000,
+  bungalow: 0,
+  house: 5000,
+  palace: 10000
+};
 
 const changeFormElements = () => {
-  document.querySelector('.ad-form').onchange = function (e) {
+  typeOfAccommodation.onchange = function () {
+    const price = minPrice[this.value];
+    priceInput.setAttribute('min', price);
+    priceInput.value = Math.max(price, priceInput.value);
+  };
+
+  userForm.onchange = function (e) {
     this.timein.value = e.target.value
     this.timeout.value = e.target.value
   };
-
-  type.addEventListener('change', () => {
-    if (type.value === 'flat') {
-      price.placeholder = '1 000'
-    } else if (type.value === 'bungalow') {
-      price.placeholder = '0'
-    } else if (type.value === 'house') {
-      price.placeholder = '5 000'
-    } else if (type.value === 'palace') {
-      price.placeholder = '10 000'
-    }
-  })
 };
 
-export {changeFormElements};
+export { changeFormElements };

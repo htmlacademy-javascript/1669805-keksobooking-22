@@ -17,3 +17,4 @@ changeFormElements();
 // adForm.classList.add('ad-form--disabled');
 // adForm.querySelectorAll('fieldset').forEach((it) => it.disabled = true);
 
+
